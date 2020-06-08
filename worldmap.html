@@ -1,0 +1,499 @@
+  <head>
+    <b:include data='blog' name='all-head-content'/>
+    <title>Daemonic Rift</title>
+<LINK REL="SHORTCUT ICON"
+       HREF="/campaign/favicon.ico">
+<style type="text/css">
+
+/*	GLOBAL PAGE ELEMENTS
+-----------------------------------------------------------------------------*/
+#navbar-iframe {
+   height:0px;
+   visibility:hidden;
+   display:none
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	}
+body {
+	background:transparent url(bgparchment.png) repeat scroll 0%;
+	color:#000000;
+	font: normal normal 72% Georgia,'Times New Roman',Times,serif;
+	line-height:1.6;
+	text-align:center;
+}
+a:link {
+	color: $mainLinkColor;
+	text-decoration: none;
+	}
+a:visited {
+	color: $mainVisitedLinkColor;
+	text-decoration: none;
+	}
+	
+div#sidebar.sidebar h2 {
+	color: $topSidebarHeaderColor;
+}	
+	
+a:hover{
+	text-decoration: underline;
+	}
+ul{
+	list-style-type: none;
+	}
+blockquote{
+	padding: 6px 10px;
+	font-size: 92%;
+	background: transparent url(bg-blockquote.png) no-repeat 0 0;
+	}
+abbr, acronym {
+	font-style: normal;
+	border-bottom: 1px dotted #333;
+	cursor: help;
+	}
+code, pre {
+	margin: 10px 0;
+	font: 1.1em/normal "Courier New", Courier, Monospace;
+	color: #666;
+	}
+img{
+	border: 0;
+	}
+h3{
+	font: 1.5em Georgia, "Times New Roman", Times, serif;
+	}
+
+/*	LAYOUT BITS
+------------------------------------------------------------------*/
+#container{
+	width: 784px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+	padding-bottom: 0px;
+
+	}
+#pagebody{
+	position: relative;
+	width: 774px;
+	background: transparent url(bg-container.gif) repeat-y;
+	padding: 0 25px;
+	}
+#banner{
+	height: 192px;
+	margin: 0;
+	padding: 0;
+	background: transparent url(bg-banner.gif) no-repeat;
+	text-align: center;
+	}
+
+/*	BANNER BITS
+--------------------------------------------------------------------*/
+
+#banner h1{
+	color:$titleTextColor;
+	font:$pageTitleFont;
+	font-variant:small-caps;
+	font-weight:normal;
+	letter-spacing:0.1em;
+	line-height:2em;
+	margin:0px 0px -10px;
+	padding:100px 0pt 0pt;
+	}
+#banner h1 a:link, #banner h1 a:visited{
+	color: #000;
+	text-decoration: none;
+	font-size: 1.4em;
+	}
+#banner h1 a:hover{
+	color: #000;
+	}
+#banner h2{
+	font:$descriptionFont;
+	color:#333333;
+	letter-spacing:0.05em;
+	margin:-2px 0pt 0pt;
+	padding:0pt;
+	text-transform:uppercase;
+	font-weight:normal;
+	}
+
+/*	ENTRY BITS
+--------------------------------------------------------------------*/
+.date-header{
+	font: bold 1.2em/normal Georgia, 'Times New Roman', Times, serif;
+	letter-spacing: 1px;
+	margin: 0 0 0 20px;
+	padding:0;
+	color: $dateHeaderColor;
+	}
+.entry {
+	color:$mainTextColor;
+	font-size:14px;
+	position:relative;
+}
+.entry p{
+	word-spacing: .15em;
+	}
+.entry ul, .entry ol{
+	list-style-type: none;
+	margin: 10px 20px;
+	}
+.entry li{
+	background: transparent url(dimple.png) no-repeat 2px 8px;
+	padding: 0 0 10px 15px;
+	word-spacing: .15em;
+	}
+.entry-header{
+	background:transparent none repeat scroll 0%;
+	color:#000000;
+	font:$postTitleFont;
+	font-variant:small-caps;
+	font-weight:bold;
+	margin:20px 20px 10px;
+	padding:0pt 0pt 10px;
+	}
+.entry-content{
+	margin: 0;
+	padding: 0 20px;
+	}
+.entry-body{
+	margin: 0;
+	}
+.entry-body img[align="right"] {
+	margin: 0 0 2em 2em;
+	}
+.entry-body img[align="left"] {
+	margin: 0 2em 2em 0;
+	}
+.entry-footer{
+	margin: 10px 0 0 0;
+	font-size: .9em;
+	font-style: italic;
+	padding: 4px 0;
+	}
+.separator{
+	display: none;
+	}
+.entry .post-footers{
+	word-spacing: normal;
+	}
+
+/*	COMMENTS and TRACKBACKS
+-----------------------------------------------------------------------*/
+#comments{
+	font-size: 1.2em;
+	color: #333;
+	width: 90%:
+	}
+.comment{
+	margin: 20px 20px 30px 20px;
+	border-top: 1px solid #330000;
+	}
+.comment p.comment-footer{
+	margin: 0;
+	}
+.comment p{
+	word-spacing: .15em;
+	}
+.comments-header{
+	margin: 20px 0 0 20px;
+	padding: 0;
+	}
+/*	comment form
+-----------------------------------------------------------------*/
+#comments-open{
+	background: #330000;
+	color: #fff;
+	position: relative;
+	margin-top: 15px;
+	}
+.comments-open-header{
+	padding: 10px 0 0 20px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	border-top: 2px solid #555;
+	height: 28px;
+	}
+.comments-open-content{
+	padding: 0 0 0 20px;
+	margin: 0;
+	}
+
+#comment-author, #comment-email, #comment-url, #comment-text{
+	border: 0;
+	padding: 2px;
+	color: #333;
+	border: 0;
+	font-family: 'Lucida Sans unicode', Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	padding: 2px;
+	color: #333;
+	background: #f6f6f6;
+	}
+#comment-text{
+	width: 456px;
+	height: 120px;
+	}
+#comment-author:focus, #comment-email:focus, #comment-url:focus, #comment-text:focus{
+	background: #fff;
+	}
+#comments-open-footer{
+	margin: 0;
+	padding: 15px 0 20px 0;
+	}
+#comments-open-footer input{
+	border: 1px solid #fff;
+	padding: 2px 0;
+	width: 80px;
+	margin-right: 15px;
+	font-family: 'Lucida Sans unicode', Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	font-weight: bold;
+	}
+.comments-open-header{
+	font: 1.5em Georgia, "Times New Roman", Times, serif;
+	}
+.comments-open label{
+	display: block;
+	}
+
+/*	trackbacks
+---------------------------------------------------------------------*/
+.trackbacks{
+	font-size: 1.2em;
+	color: #333;
+	width: 90%;
+	}
+.trackbacks-content{
+	padding: 20px;
+	}
+#trackbacks-info{
+	padding: 0 20px;
+	}
+.trackbacks-header{
+	margin: 20px 20px 0 20px;
+	}
+.trackback{
+	margin: 15px 0;
+	border-top: 1px solid #333;
+	}
+.trackback-footer{
+	margin: 0;
+	padding: 0 0 10px 0;
+	}
+
+/*	MODULE BITS
+--------------------------------------------------------------------*/
+.module{
+	font-size: 1.1em;
+	padding-bottom: 10px;
+	}
+.module-search form{
+	margin-left: 10px;
+	}
+#search{
+	font: 1.1em/normal "Lucida Sans Unicode", "Trebuchet MS", sans-serif;
+	width: 130px;
+	border: 1px solid #ccc;
+	padding: 1px 0;
+	}
+.module-content, .module-list-item{
+	margin: 0;
+	padding: 0;
+	}
+.module-content ul{
+	margin: 0 10px;
+	padding: 0;
+	}
+.module-content li ul{
+	background-image: none;
+	margin: 0;
+	}
+.module-categories li a{
+	margin: 0;
+	background: transparent url(http://i254.photobucket.com/albums/hh92/eblogtemplates/parchment/bullet-li.gif) no-repeat 0 9px;
+	padding-left: 10px;
+	}
+.module-categories li ul a{
+	display: inline;
+	padding-left: 30px;
+	background: transparent url(http://i254.photobucket.com/albums/hh92/eblogtemplates/parchment/bullet-li.gif) no-repeat 14px 9px;
+	line-height: 2.1em;
+	}
+.module h2{
+	font: normal 1.5em Georgia, 'Times New Roman', Times, Palatino, serif;
+	font-variant: small-caps;
+	background: transparent;
+	letter-spacing: 2px;
+	padding: 10px 0 5px;
+	margin: 0 10px;
+	color: #a66532;
+	}
+.module h2 a:link, .module h2 a:visited{
+	color: #000;
+	}
+.module h2 a:hover{
+	text-decoration: underline;
+	}
+.module-archives li{
+	padding: 0 0 0 10px;
+	margin: 0;
+	background: transparent url(http://i254.photobucket.com/albums/hh92/eblogtemplates/parchment/bullet-li.gif) no-repeat 2px 7px;
+	}
+.module-syndicate .module-content{
+	margin: 20px 10px 0 10px;
+	line-height: 2em;
+	background: transparent url(http://i254.photobucket.com/albums/hh92/eblogtemplates/parchment/feed-icon.gif) no-repeat 2px 10px;
+	padding: 5px 0 5px 25px;
+	font-size: 82%;
+	}
+.module-powered{
+	line-height: 2em;
+	text-align: center;
+	padding: 20px 0 0 0;
+	font-size: 82%;
+	}
+.module-content a{
+	padding: 3px;
+	margin: 0;
+	}
+.module-content a:link, .module-content a:visited{
+	color: #5F1C14;
+	text-decoration: none;
+	}
+.module-content a:hover{
+	color: #333;
+	text-decoration: underline;
+	}
+
+#banner, #pagebody, #alpha, #beta, #gamma, #delta, .module, .module-content, #pagebody-inner, .pkg, #container-inner{
+	position: static;
+	width: auto;
+	}
+
+/*	TWO COLUMN RIGHT Layout
+-----------------------------------------------------------------------*/
+.layout-two-column-right #alpha-inner{
+	margin: 0 10px 0 10px;
+	}
+.layout-two-column-right #alpha{
+	float: left;
+	width: 528px;
+	margin-top: 10px;
+	}
+.layout-two-column-right #beta{
+	float: right;
+	width: 210px;
+	padding: 0 0 10px 0;
+	margin-top: 0px;
+	margin-right: 15px;
+	}
+
+/*	TWO COLUMN LEFT Layout
+-----------------------------------------------------------------------*/
+.layout-two-column-left #alpha{
+	float: left;
+	width: 210px;
+	padding: 0 0 10px 0;
+	margin-top: 0px;
+	margin-left: 15px;
+	}
+.layout-two-column-left #beta{
+	float: right;
+	width: 528px;
+	margin-top: 10px;
+	}
+.layout-two-column-left #beta-inner{
+	margin: 0 10px 0 10px;
+	}
+
+/*	ONE COLUMN
+-----------------------------------------------------------------------*/
+.layout-one-column #alpha{
+	width: 100%;
+	margin-top: 0px;
+	}
+
+/*	ETC
+-----------------------------------------------------------------------*/
+.entry-userpic, .comment-userpic {
+	display: none;
+	}
+
+.comment-content, .entry-body{
+	width: 100%;
+	float: none;
+	}
+	
+.comment-footer {
+	margin:10px 0px 0px 20px;
+}	
+
+.post-feeds {
+	margin:10px 0px 0px 20px;
+}
+
+.feed-links {
+	margin:10px 0px 0px 20px;
+}
+
+#blog-pager-newer-link {float: left;} 
+#blog-pager-older-link {float: right;} 
+#blog-pager {padding:20px 20px 0px; text-align: center; }
+
+.clear{clear:both;}
+]]></b:skin>
+	
+</style>
+
+<!-- Location of javascript. -->
+<script language="javascript" type="text/javascript" src="swfobject.js" ></script> 	
+  </head>
+
+
+<body class='layout-one-column'>
+
+		<div id='container'><div class='pkg' id='container-inner'>
+
+
+			<div id='banner'><div class='pkg' id='banner-inner'>
+				<b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
+<b:widget id='Header1' locked='true' title='Parchment (Header)' type='Header'>
+<b:includable id='main'>
+					<h1 id='banner-header'>Daemonic Rift Campaign
+					</h1>
+					<h3 id='banner-description'><data:description/>
+                    <a href="index.html">Home</a> - <a href="rules.html">Rules</a> - <a href="battles.html">Battle Chart</a> - <a href="worldmap.html">World Map</a> - <a href="estaliamap.html">Estalia Map</a></h3>
+				</b:includable>
+</b:widget>
+</b:section>
+			</div></div>
+
+
+			<div id='pagebody'><div class='pkg' id='pagebody-inner'>
+
+
+			<div id='alpha'><div class='pkg' id='alpha-inner'>
+        <b:section class='main' id='main' showaddelement='no'>
+<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+
+<DIV ALIGN="center">
+<TABLE BORDER=0 CELLPADDING=1 CELLSPACING=0 WIDTH="740" ALIGN="CENTER">
+  <TR>
+	<TD>
+	  <TABLE BORDER=0 WIDTH=100% CELLSPACING=0 CELLPADDING=0>
+		<TR>
+		  <TD ALIGN="CENTER">
+		  	  <a href="worldmap.png" target="_blank"><img src="worldmap.png" width="700"></a></TD>
+		</TR>
+	  </TABLE>
+	</TD>
+  </TR>
+</TABLE>
+
+</div>
+</div></div></div></div></div></div>
+</body>
+</html>

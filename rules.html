@@ -1,0 +1,563 @@
+  <head>
+    <b:include data='blog' name='all-head-content'/>
+    <title>Daemonic Rift</title>
+<LINK REL="SHORTCUT ICON"
+       HREF="/campaign/favicon.ico">
+<style type="text/css">
+
+/*	GLOBAL PAGE ELEMENTS
+-----------------------------------------------------------------------------*/
+#navbar-iframe {
+   height:0px;
+   visibility:hidden;
+   display:none
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	}
+body {
+	background:transparent url(bgparchment.png) repeat scroll 0%;
+	color:#000000;
+	font: normal normal 72% Georgia,'Times New Roman',Times,serif;
+	line-height:1.6;
+	text-align:center;
+}
+a:link {
+	color: $mainLinkColor;
+	text-decoration: none;
+	}
+a:visited {
+	color: $mainVisitedLinkColor;
+	text-decoration: none;
+	}
+	
+div#sidebar.sidebar h2 {
+	color: $topSidebarHeaderColor;
+}	
+	
+a:hover{
+	text-decoration: underline;
+	}
+ul{
+	list-style-type: none;
+	}
+blockquote{
+	padding: 6px 10px;
+	font-size: 92%;
+	background: transparent url(bg-blockquote.png) no-repeat 0 0;
+	}
+abbr, acronym {
+	font-style: normal;
+	border-bottom: 1px dotted #333;
+	cursor: help;
+	}
+code, pre {
+	margin: 10px 0;
+	font: 1.1em/normal "Courier New", Courier, Monospace;
+	color: #666;
+	}
+img{
+	border: 0;
+	}
+h3{
+	font: 1.5em Georgia, "Times New Roman", Times, serif;
+	}
+
+/*	LAYOUT BITS
+------------------------------------------------------------------*/
+#container{
+	width: 784px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+	padding-bottom: 0px;
+
+	}
+#pagebody{
+	position: relative;
+	width: 774px;
+	background: transparent url(bg-container.gif) repeat-y;
+	padding: 0 25px;
+	}
+#banner{
+	height: 192px;
+	margin: 0;
+	padding: 0;
+	background: transparent url(bg-banner.gif) no-repeat;
+	text-align: center;
+	}
+
+/*	BANNER BITS
+--------------------------------------------------------------------*/
+
+#banner h1{
+	color:$titleTextColor;
+	font:$pageTitleFont;
+	font-variant:small-caps;
+	font-weight:normal;
+	letter-spacing:0.1em;
+	line-height:2em;
+	margin:0px 0px -10px;
+	padding:100px 0pt 0pt;
+	}
+#banner h1 a:link, #banner h1 a:visited{
+	color: #000;
+	text-decoration: none;
+	font-size: 1.4em;
+	}
+#banner h1 a:hover{
+	color: #000;
+	}
+#banner h2{
+	font:$descriptionFont;
+	color:#333333;
+	letter-spacing:0.05em;
+	margin:-2px 0pt 0pt;
+	padding:0pt;
+	text-transform:uppercase;
+	font-weight:normal;
+	}
+
+/*	ENTRY BITS
+--------------------------------------------------------------------*/
+.date-header{
+	font: bold 1.2em/normal Georgia, 'Times New Roman', Times, serif;
+	letter-spacing: 1px;
+	margin: 0 0 0 20px;
+	padding:0;
+	color: $dateHeaderColor;
+	}
+.entry {
+	color:$mainTextColor;
+	font-size:14px;
+	position:relative;
+}
+.entry p{
+	word-spacing: .15em;
+	}
+.entry ul, .entry ol{
+	list-style-type: none;
+	margin: 10px 20px;
+	}
+.entry li{
+	background: transparent url(dimple.png) no-repeat 2px 8px;
+	padding: 0 0 10px 15px;
+	word-spacing: .15em;
+	}
+.entry-header{
+	background:transparent none repeat scroll 0%;
+	color:#000000;
+	font:$postTitleFont;
+	font-variant:small-caps;
+	font-weight:bold;
+	margin:20px 20px 10px;
+	padding:0pt 0pt 10px;
+	}
+.entry-content{
+	margin: 0;
+	padding: 0 20px;
+	}
+.entry-body{
+	margin: 0;
+	}
+.entry-body img[align="right"] {
+	margin: 0 0 2em 2em;
+	}
+.entry-body img[align="left"] {
+	margin: 0 2em 2em 0;
+	}
+.entry-footer{
+	margin: 10px 0 0 0;
+	font-size: .9em;
+	font-style: italic;
+	padding: 4px 0;
+	}
+.separator{
+	display: none;
+	}
+.entry .post-footers{
+	word-spacing: normal;
+	}
+
+/*	COMMENTS and TRACKBACKS
+-----------------------------------------------------------------------*/
+#comments{
+	font-size: 1.2em;
+	color: #333;
+	width: 90%:
+	}
+.comment{
+	margin: 20px 20px 30px 20px;
+	border-top: 1px solid #330000;
+	}
+.comment p.comment-footer{
+	margin: 0;
+	}
+.comment p{
+	word-spacing: .15em;
+	}
+.comments-header{
+	margin: 20px 0 0 20px;
+	padding: 0;
+	}
+/*	comment form
+-----------------------------------------------------------------*/
+#comments-open{
+	background: #330000;
+	color: #fff;
+	position: relative;
+	margin-top: 15px;
+	}
+.comments-open-header{
+	padding: 10px 0 0 20px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	border-top: 2px solid #555;
+	height: 28px;
+	}
+.comments-open-content{
+	padding: 0 0 0 20px;
+	margin: 0;
+	}
+
+#comment-author, #comment-email, #comment-url, #comment-text{
+	border: 0;
+	padding: 2px;
+	color: #333;
+	border: 0;
+	font-family: 'Lucida Sans unicode', Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	padding: 2px;
+	color: #333;
+	background: #f6f6f6;
+	}
+#comment-text{
+	width: 456px;
+	height: 120px;
+	}
+#comment-author:focus, #comment-email:focus, #comment-url:focus, #comment-text:focus{
+	background: #fff;
+	}
+#comments-open-footer{
+	margin: 0;
+	padding: 15px 0 20px 0;
+	}
+#comments-open-footer input{
+	border: 1px solid #fff;
+	padding: 2px 0;
+	width: 80px;
+	margin-right: 15px;
+	font-family: 'Lucida Sans unicode', Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	font-weight: bold;
+	}
+.comments-open-header{
+	font: 1.5em Georgia, "Times New Roman", Times, serif;
+	}
+.comments-open label{
+	display: block;
+	}
+
+/*	trackbacks
+---------------------------------------------------------------------*/
+.trackbacks{
+	font-size: 1.2em;
+	color: #333;
+	width: 90%;
+	}
+.trackbacks-content{
+	padding: 20px;
+	}
+#trackbacks-info{
+	padding: 0 20px;
+	}
+.trackbacks-header{
+	margin: 20px 20px 0 20px;
+	}
+.trackback{
+	margin: 15px 0;
+	border-top: 1px solid #333;
+	}
+.trackback-footer{
+	margin: 0;
+	padding: 0 0 10px 0;
+	}
+
+/*	MODULE BITS
+--------------------------------------------------------------------*/
+.module{
+	font-size: 1.1em;
+	padding-bottom: 10px;
+	}
+.module-search form{
+	margin-left: 10px;
+	}
+#search{
+	font: 1.1em/normal "Lucida Sans Unicode", "Trebuchet MS", sans-serif;
+	width: 130px;
+	border: 1px solid #ccc;
+	padding: 1px 0;
+	}
+.module-content, .module-list-item{
+	margin: 0;
+	padding: 0;
+	}
+.module-content ul{
+	margin: 0 10px;
+	padding: 0;
+	}
+.module-content li ul{
+	background-image: none;
+	margin: 0;
+	}
+.module-categories li a{
+	margin: 0;
+	background: transparent url(http://i254.photobucket.com/albums/hh92/eblogtemplates/parchment/bullet-li.gif) no-repeat 0 9px;
+	padding-left: 10px;
+	}
+.module-categories li ul a{
+	display: inline;
+	padding-left: 30px;
+	background: transparent url(http://i254.photobucket.com/albums/hh92/eblogtemplates/parchment/bullet-li.gif) no-repeat 14px 9px;
+	line-height: 2.1em;
+	}
+.module h2{
+	font: normal 1.5em Georgia, 'Times New Roman', Times, Palatino, serif;
+	font-variant: small-caps;
+	background: transparent;
+	letter-spacing: 2px;
+	padding: 10px 0 5px;
+	margin: 0 10px;
+	color: #a66532;
+	}
+.module h2 a:link, .module h2 a:visited{
+	color: #000;
+	}
+.module h2 a:hover{
+	text-decoration: underline;
+	}
+.module-archives li{
+	padding: 0 0 0 10px;
+	margin: 0;
+	background: transparent url(http://i254.photobucket.com/albums/hh92/eblogtemplates/parchment/bullet-li.gif) no-repeat 2px 7px;
+	}
+.module-syndicate .module-content{
+	margin: 20px 10px 0 10px;
+	line-height: 2em;
+	background: transparent url(http://i254.photobucket.com/albums/hh92/eblogtemplates/parchment/feed-icon.gif) no-repeat 2px 10px;
+	padding: 5px 0 5px 25px;
+	font-size: 82%;
+	}
+.module-powered{
+	line-height: 2em;
+	text-align: center;
+	padding: 20px 0 0 0;
+	font-size: 82%;
+	}
+.module-content a{
+	padding: 3px;
+	margin: 0;
+	}
+.module-content a:link, .module-content a:visited{
+	color: #5F1C14;
+	text-decoration: none;
+	}
+.module-content a:hover{
+	color: #333;
+	text-decoration: underline;
+	}
+
+#banner, #pagebody, #alpha, #beta, #gamma, #delta, .module, .module-content, #pagebody-inner, .pkg, #container-inner{
+	position: static;
+	width: auto;
+	}
+
+/*	TWO COLUMN RIGHT Layout
+-----------------------------------------------------------------------*/
+.layout-two-column-right #alpha-inner{
+	margin: 0 10px 0 10px;
+	}
+.layout-two-column-right #alpha{
+	float: left;
+	width: 528px;
+	margin-top: 10px;
+	}
+.layout-two-column-right #beta{
+	float: right;
+	width: 210px;
+	padding: 0 0 10px 0;
+	margin-top: 0px;
+	margin-right: 15px;
+	}
+
+/*	TWO COLUMN LEFT Layout
+-----------------------------------------------------------------------*/
+.layout-two-column-left #alpha{
+	float: left;
+	width: 210px;
+	padding: 0 0 10px 0;
+	margin-top: 0px;
+	margin-left: 15px;
+	}
+.layout-two-column-left #beta{
+	float: right;
+	width: 528px;
+	margin-top: 10px;
+	}
+.layout-two-column-left #beta-inner{
+	margin: 0 10px 0 10px;
+	}
+
+/*	ONE COLUMN
+-----------------------------------------------------------------------*/
+.layout-one-column #alpha{
+	width: 100%;
+	margin-top: 0px;
+	}
+
+/*	ETC
+-----------------------------------------------------------------------*/
+.entry-userpic, .comment-userpic {
+	display: none;
+	}
+
+.comment-content, .entry-body{
+	width: 100%;
+	float: none;
+	}
+	
+.comment-footer {
+	margin:10px 0px 0px 20px;
+}	
+
+.post-feeds {
+	margin:10px 0px 0px 20px;
+}
+
+.feed-links {
+	margin:10px 0px 0px 20px;
+}
+
+#blog-pager-newer-link {float: left;} 
+#blog-pager-older-link {float: right;} 
+#blog-pager {padding:20px 20px 0px; text-align: center; }
+
+.clear{clear:both;}
+]]></b:skin>
+	
+</style>
+
+<!-- Location of javascript. -->
+<script language="javascript" type="text/javascript" src="swfobject.js" ></script> 	
+  </head>
+
+
+<body class='layout-one-column'>
+
+		<div id='container'><div class='pkg' id='container-inner'>
+
+
+			<div id='banner'><div class='pkg' id='banner-inner'>
+				<b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
+<b:widget id='Header1' locked='true' title='Parchment (Header)' type='Header'>
+<b:includable id='main'>
+					<h1 id='banner-header'>Daemonic Rift Campaign
+					</h1>
+					<h3 id='banner-description'><data:description/>
+                    <a href="index.html">Home</a> - <a href="rules.html">Rules</a> - <a href="battles.html">Battle Chart</a> - <a href="worldmap.html">World Map</a> - <a href="estaliamap.html">Estalia Map</a></h3>
+				</b:includable>
+</b:widget>
+</b:section>
+			</div></div>
+
+
+			<div id='pagebody'><div class='pkg' id='pagebody-inner'>
+
+
+			<div id='alpha'><div class='pkg' id='alpha-inner'>
+        <b:section class='main' id='main' showaddelement='no'>
+<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+
+<div class="entry">
+ <p align="center">DAEMON RIFT Campaign Rules</p>
+ <p>&nbsp;</p>
+ <p><u>Overall</u><br />
+   Each player starts with one 2250 point list, and one token  representing it on the strategic map on his home stronghold. If he gains  sufficient territory (see below), he can get a second army token, at which  point he needs to devise a 2nd 2250 pt list &ndash; no special characters  or unique magic items can be shared with the first list. With more territory  won, a third army token and list can be added, again not sharing items or  special characters. (A 4th or even a 5th army token can  also be created, though no lists are needed for these: they will be a  defense-only army tokens, and must remain within the existing empire; they can  only roll off with foes or support other armies.)&nbsp; So at most each player will need to devise  three 2250 point lists. Obviously, models can be shared between the lists. No  more than one will ever be on a Warhammer table at one time.<br />
+- Each player starts with a realm of 3 territories: a home  stronghold territory surrounded by two more. If 2 more territories (for 5  total) are conquered, a 2nd army token is created, and starts  anywhere within the four home territories. If 9 total territories are  conquered, a 3rd army token is created. If 14 are conquered a 4th  (defensive) token is created. If 20, a 5th (defensive) token is  created.<br />
+- Only the very first battles of this WHF campaign (between  two lists fighting their first WHF battles) will be fought with magic items  concealed as normal. After the first battles, opponents always have the right  to ask each other to reveal any and all magic items in their lists (though they  can agree not to ask each other if they wish). The reason for revealing items  is that as the campaign progresses it will become known to some who has what  magic items, while others won&rsquo;t know, which creates imbalance. Thus in building  your lists for this campaign it would probably be wise to avoid magic items  that are only effective when opponents are surprised by them.<br />
+- If an army is &ldquo;Massacred&rdquo; during a WHF battle (according  to the regular GW victory table), roll a die: on a 1-3, the token (and list) is  eliminated from the game and a replacement token will appear in the home  stronghold the next turn. A new (inexperienced) list at 2200 points (instead of  2250) will need to be drawn up for it. If an army is not only Massacred but  obliterated in battle &ndash; <em>every</em> unit in  the list counted as having been destroyed by the end of the battle &ndash; the token  and list are automatically eliminated, with no die roll needed.<br />
+- The goal of the campaign is to have the most victory  points at the end of the game. Game length is 15 turns. Points are scored as  follows:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 1 point  for every territory controlled at game end.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 2 points  for controlling special territories (2 located centerish in the board).<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 4 points  for controlling the main objective territory at board center.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 2 points  for every enemy faction defeated at least once in battle.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 1 point  for every enemy token eliminated in battle.<br />
+As you can see, a faction can go for the win in different  ways: accumulating a large empire will score lots of points; but so will  holding one&rsquo;s homeland and seizing a couple of key objectives; and one could  win by hardly worrying about holding territory at all, but rather cutting a  swath through the lands and defeating a wide variety of opponents. Let army  fluff or cold strategy point you and your faction in whatever direction you  wish -- whatever your approach, there will be points to reward success!</p>
+ <p>&nbsp;</p>
+ <p><u>Movement and Territory Control</u><br />
+   - Movement works like the old Diplomacy game for the most  part. Each army token can move one territory per turn (or &ldquo;hold&rdquo; to stay in  place, defending its current territory). All moves are simultaneous, with  orders written down then revealed together. <br />
+   - Any territory in which an army token ends its move becomes <em>controlled</em> by that faction. Place a  flag or other marker there to indicate control. The flag (and control) remains  until some other faction ends an army move in that territory.<br />
+   - If two armies attempt to occupy the same space, and  neither has the support of another army (see below), they fight a battle; the  winner occupies the space, the loser goes back whence it came. (In a draw,  return both armies to where they started.)&nbsp;  If the losing token cannot go back whence it came because another token  (friend or foe) has occupied the territory it left, or if an army sitting in a  territory is ejected from it, the losing army token gets to retreat to another  adjacent territory of its choice, according to the following criteria: <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - It must  retreat to an unoccupied territory its faction controls, if possible.<br />
+   - If there are no adjacent  territories controlled by its faction, then it may pick an unoccupied territory  controlled by another faction, or an unclaimed territory, to retreat to. It  does not get to take control of it, however &ndash; the territory retains its  previous status (controlled by another faction, or no one). <br />
+   - It cannot retreat to the  territory from which the victor in the battle came.<br />
+   - If there are no adjacent  unoccupied territories to which it can retreat, either because of blocking army  tokens (friend or foe) or because the victor in the battle came from the only  open territory, the token is destroyed. <br />
+   - If one player has another token adjacent to the territory  the first token wishes to travel to, it can be ordered to &ldquo;support&rdquo; the move of  the first one instead of moving itself. If their foes do not have support of  their own, the side with support wins 2-1. No battle is fought: the outnumbered  army is pushed out of the space it wishes to occupy. If both have support so it  is 2 vs 2, each side picks one of their armies to face the other. <br />
+   - A token ordered to support another will revert to a &ldquo;Hold&rdquo;  order if it itself is attacked. However, this rule cannot be used by a lone  token to get out of being ganged up on in a 2-1: when the 1 is attacked by a  foe with another foe in support, it will be driven back, regardless of which  one it attacks itself. It will need some other army to attack the supporting  token.<br />
+   - Two adjacent tokens can offer mutual support: each is  ordered to &ldquo;support&rdquo; the other. <br />
+   - Enemy army tokens cannot switch places, &ldquo;passing each  other in the night.&rdquo; In a situation in which hostile armies were ordered to  move to each other&rsquo;s territory, fight a battle, and the winner goes where it  intended and the loser gets pushed backwards one territory. Roll a die to see  in which terrain the battle takes place. <br />
+   - At the end of every turn add up the number of territories  each faction controls, and add or subtract army tokens as needed. (0 territories:  no tokens. 1-4 territories: 1 token. 5-8 territories: 2 tokens. 9-13  territories: 3 tokens. 14-19 territories: 3 + 1 defensive token. 20+  territories: 3 + 2 defensive tokens.) Notice that a faction is only eliminated  from the game, with no tokens or lists, if it loses every single one of its  three original territories. If the home stronghold territory itself is occupied  by a foe, new tokens start in an adjacent original territory.<br />
+   - Movement speeds beyond the usual 1: <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - an  all-cav/speedy army token (i.e. every unit in that army list is Move 7 or  higher) can move 2 spaces in a turn, not 1, when the terrain is open. <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - army  tokens moving along roads for their whole move can move 2 spaces, not 1 (cav  can move 3). <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - army  tokens not moving along a road that have <em>any</em> artillery trying to enter into difficult terrain (=forest, swamp, hills,  mountains, or crossing a river not at a bridge) must roll a die: on a 1 the  move fails and they remain where they are.<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - note that  armies that move 2 or more will only control the territory they end up in, not  all the ones they moved through to get there. </p>
+ <p><u>Combat and the Strategic Map</u><br />
+   When two armies clash on the strategic map, play a WHF  pitched battle using the lists associated with the army tokens in conflict. <br />
+   - Since map campaigns can sometimes result in players  constantly (and boringly) fighting the same foe over and over, we will use the  following rule: After two factions have fought each other in WHF battles twice,  each faction must fight another faction before fighting each other again.  Simply &ldquo;roll off&rdquo; any battles in the meantime: 1-3 one side wins, 4-6 the  other, and move the winning/losing army tokens accordingly; no massacres or  lost tokens are possible on roll-offs. After two sides have fought three WHF battles  against each other, from that point forward either player has the option of  asking for a roll-off instead of fighting out the battle. <br />
+   - Army tokens defending one of the four original home  territories of a faction have these advantages: they automatically win the roll  to see who starts placing terrain; they automatically win the choice of which  board side they wish to play from, but must then place the first unit. The roll  goes as normal to see who moves first.<br />
+   - Tokens defending their home <em>stronghold</em> get the above advantages plus also get an extra 300  points to add to their list. In a rolled-off battle, defenders win on a 3+ on a  d6 from their stronghold instead of the usual 4+. The &ldquo;home team&rdquo; also gets  these benefits when trying to retake a lost home stronghold after it&rsquo;s been  captured.<br />
+   - When deploying terrain for the WHF battles, use the  following guidelines: <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - In a  clear territory, there will be 4 pieces of terrain, each one players&rsquo; choice.<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - In a  woods territory, there will be 6 pieces of terrain, at least 4 of which must be  woods.<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - In a  hills territory, there will be 4-6 pieces of terrain, at least 3 of which must  be hills.<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - In a  swamp territory, there will be 4-6 pieces of terrain, and there must be at  least 1 water and 2 woods. <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - when a  river separated the two armies&rsquo; territories before they came to battle, there  must be at least 1 water (players can set up a full river if they wish, but  it&rsquo;s not required).<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - In a  mountain territory, there will be 6 pieces of terrain, at least 4 of which must  be hills, of which two must be multi-level.</p>
+ <p><u>Combat Losses</u><br />
+   While it would be realistic to eliminate whole units and  vastly wear down others in one&rsquo;s set lists as battles take their toll, that  would weaken lists far too much after a couple of battles, soon rendering them  impotent and throw game balance out the window. It will be assumed, therefore,  that each faction&rsquo;s homeland is constantly sending out to their raging armies  replacement troops to refill ranks. However, it will be fun and appropriate to  allow individual lists and their leaders to suffer a <em>bit</em> of wear and tear. Thus the following rules.<br />
+   - Monsters of 3 or more wounds, whether alone or in units,  automatically &ldquo;survive&rdquo; battles to fight the next one, even if killed during  the battle. However, if it is &ldquo;killed&rdquo;, roll a die at the end of the battle: on  a 1-3, the monster starts the next battle with one wound. A monster with 4 or  more wounds also makes this 1-3/4-6 roll if it was reduced to just one wound  left in battle.<br />
+   - Characters that are killed actually do die on a 1, to be  replaced by a new, green version of the exact same type with the same magic  items, less one item (a worthy unit champion has been promoted, but one of his  predecessor&rsquo;s items has been lost). On a 2-5, the character survives, but  starts the next battle with one wound already. On a 6 he makes a miraculous  recovery &ndash; no ill effects from his &ldquo;death&rdquo;. The second time a character &ldquo;dies&rdquo;  in battle, he really dies on a 1-2; the third, a 1-3. Never gets worse than  1-3.<br />
+   - Units of infantry or cavalry automatically survive to the  next battle, but if they suffered half losses or greater at any point in the  fight, they begin the next battle with 1-3 fewer men (if they had 20+ models to  start with) or 1-2 fewer (if they had 10-19) or 1 fewer (if they had less than  10 models). <br />
+   - Monsters/creatures of 2 wounds per model that fight in  units (e.g., Flesh Hounds, Warhawk Riders) are treated as a unit of infantry or  cavalry and take losses as described in the previous paragraph, but instead of  going by the total of models in the unit go by the total of wounds. So, for  example, a unit of 6 Flesh Hounds counts as a 12-model unit, and thus will  start the next battle with 1-2 fewer wounds (i.e., either one wound on one  model or one less model) if it lost half or more of its models in the battle. A  unit of 3 Warhawks, with 6 total wounds originally, could only ever start with  1 wound off if 2 or more models were lost in the previous battle.<br />
+   - Chariots, war machines, and other odd devices with crew  are treated like monsters of 3+ wounds. However, the &ldquo;wound&rdquo; received on a 1-3  is randomly distributed as per shooting results, so a crewman could be killed  or the device itself wounded.<br />
+   - The Vampire Counts (and any other army with healing  abilities) may not heal wounded characters and units of wear and tear losses  they begin a game with. The only exception to this is Skeletons, Zombies, and  Ghouls, units of which can be raised as normal regardless of whether or not  they started with some combat losses. &nbsp;<br />
+   - Note that models and units which count as destroyed for  victory point purposes because of 1) running off the table or 2) ending the  game in a state of flight do NOT count as dead for purposes of rolling on the  Combat Losses tables. They fled the field and will live to fight another day!  Units destroyed in other ways (getting run down by pursuers, etc.)&nbsp; have to roll.<br />
+   - An army that issues a &ldquo;Hold&rdquo; order for its move and that  is not attacked that turn can repair 75 points worth of its list&rsquo;s Combat Losses  damage sustained at any point in the campaign. For healing multi-wound models,  divide the total cost of the model (with all magic items, extra abilities, etc.  costed in) by the Wound characteristic and that's how many points each wound  costs to heal. This &ldquo;Hold&rdquo; and repair can be done repeatedly. That should allow  badly bashed up armies to right themselves, at the price of a couple of turns  of inactivity. Magic items lost due to characters dying can be replaced, but at  a cost of 3x the points. (So a turn&rsquo;s rest of 75 repair points can be used to  replace one 25 point magic item with the same item or different 25 point item  or 25 points worth of multiple items.) Repair points can be used for different  things in the same turn &ndash; say, 30 points being used to replace three 10-point  infantry models and the remaining 45 points going to add a 15-point magic item  to a replacement character whose original lost a 15-point-or-greater magic item  upon dying. Left-over points cannot be &ldquo;stored&rdquo; to be added to repair points  gained with future &ldquo;Hold&rdquo; orders. Lists of 2200 points brought in to replace  massacred tokens can &ldquo;Hold&rdquo; in the home stronghold the turn they arrive and,  assuming they aren't attacked, get raised to 2250.</p>
+ <p><u>Combat Experience</u><br />
+   The flipside of wear and tear on a list is the experience  that units can gain. The survivors are getting leaner and meaner&hellip;<br />
+   - Any non-character unit (monster, infantry, cavalry,  machine, whatever) that survives a battle having suffered less than half  casualties/wounds gets to roll 2d6 on the following chart: <br />
+   2-8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; No upgrade<br />
+   9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +1 WS or I  (player&rsquo;s choice; can&rsquo;t duplicate a previous upgrade)<br />
+   10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +1 Ld or Move  (player&rsquo;s choice; can&rsquo;t duplicate a previous upgrade)<br />
+   11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +1 T  (consider this roll a 12 if the unit already received upgraded toughness)<br />
+   12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +1 S or BS  (player&rsquo;s choice; can&rsquo;t duplicate a previous upgrade)<br />
+   No more than 3 units can receive upgrades after any one  battle &ndash; so start rolling with the ones you&rsquo;d most like to see upgraded!<br />
+   - Any characters surviving a battle who suffered NO wounds  gets to roll 2d6:<br />
+   2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Character  gets traumatized. -1 Ld.<br />
+   3-7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; No upgrade<br />
+   8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +1 WS or I  (player&rsquo;s choice; can&rsquo;t duplicate a previous upgrade)<br />
+   9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +1 S or BS  (player&rsquo;s choice; can&rsquo;t duplicate a previous upgrade)<br />
+   10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +1 Ld or Move  (player&rsquo;s choice; can&rsquo;t duplicate a previous upgrade)<br />
+   11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +1 T  (consider this roll a 12 if the guy already received upgraded toughness)<br />
+   12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wizards: +1  power die OR dispel die. Warrior generals: +6&rdquo; range leadership. &nbsp;&nbsp;&nbsp; Others: choose any result on this table.<br />
+   No more than 2 characters can receive upgrades after any one  battle &ndash; so start rolling with the ones you&rsquo;d most like to see upgraded!<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+   Putting Combat Losses and Combat Experience together should  result in adding character to army lists. After a battle, several units may  have cut-down numbers and individuals with seeping wounds, but also some  grisled veterans with nicely improved stats. Remember, Experience gains are  permanent; Combat Losses only last through the next battle and don&rsquo;t accumulate  from battle to battle (except for dead leaders, of course). These rules also  add a cool feature to battles: the desire to hoard key units or individuals to  avoid losses or build on gains made. Once a hero or veteran unit wins an  upgrade or two, who wants to see them perish or whittled down? So a general may  find himself altering battle plans to favor this or that unit or hero&hellip; or wait  to send it into battle to deliver the critical blow!</p>
+<p>&nbsp;</p>
+ <p>&nbsp;</p>
+</div>
+</div></div></div></div></div></div>
+</body>
+</html>
