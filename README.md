@@ -1,7 +1,7 @@
 # WHFB-Daemonic-Rift-Campaign
 Games Workshop Warhammer Fantasy Battles Daemonic Rift Campaign
 
-This repository is a Campaign for Warhammer Fantasy Battles based on [Adam Sweeny](https://github.com/adsweeny)'s [WFB-Campaigns repository](https://github.com/adsweeny/WFB-Campaigns).
+This repository is a Campaign for Warhammer Fantasy Battle, 8th edition, based on [Adam Sweeny](https://github.com/adsweeny)'s [WFB-Campaigns repository](https://github.com/adsweeny/WFB-Campaigns).
 
 I did the following to "update" the repository.
 1. Remove content that was specific to Adam's gaming group & their experience playing the campaign
